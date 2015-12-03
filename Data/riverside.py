@@ -9,8 +9,7 @@ def project_um():
         value4 = []
         value5 = []
         for i in test:
-            data = i[0].split(';')
-            print(data)
+            data = i[0].split(";")
             date.append(data[1])
             value1.append(data[2])
             value2.append(data[3])

@@ -1,0 +1,8 @@
+def change_value_to_string(valu):
+    list_value = []
+    loop = 0
+    for i in valu:
+        value = i[1:len(valu[loop])-1]
+        list_value.append(value)
+        loop += 1
+    return(list_value)

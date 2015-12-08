@@ -1,6 +1,6 @@
 import csv
 def data_split():
-    with open('Samlae.csv', encoding="utf-8") as csvfile:
+    with open('Ayuthaya.csv', encoding="utf-8") as csvfile:
         test = csv.reader(csvfile)
         list_date = []
         list_do = []
@@ -15,7 +15,6 @@ def data_split():
     list_do = change_value_to_float(list_do)
     list_ec = change_value_to_float(list_ec)
     list_temp = change_value_to_float(list_temp)
-    print(list_temp)
     return list_date, list_do, list_ec, list_temp
 
 def change_value_to_float(valu):

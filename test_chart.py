@@ -1,7 +1,7 @@
 import csv
 from nvd3 import lineChart
 def project_um():
-    with open('Bangsai.csv', encoding="utf-8") as csvfile:
+    with open('Data/Bangsai.csv', encoding="utf-8") as csvfile:
         test = csv.reader(csvfile)
         list_date = []
         list_do = []

@@ -1,24 +1,29 @@
 import csv
-from nvd3 import lineChart
 def project_um():
     with open('Bangsai.csv', encoding="utf-8") as csvfile:
         test = csv.reader(csvfile)
-        list_date = []
-        list_do = []
-        list_ec = []
-        list_temp = []
+        date = []
+        value1 = []
+        value2 = []
+        value3 = []
+        value4 = []
+        value5 = []
         for i in test:
             data = i[0].split(';')
-            list_date.append(data[1])
-            list_do.append(data[2])
-            list_ec.append(data[3])
-            list_temp.append(data[4])
-    list_do = change_value_to_float(list_do)
-    list_ec = change_value_to_float(list_ec)
-    list_temp = change_value_to_float(list_temp)
-    return len(list_do)
-    #created HTML
-    #chart = lineChart(name="lineChart", x_is_date=True, 
+            # print(data)
+            date.append(data[1])
+            value1.append(data[2])
+            value2.append(data[3])
+            value3.append(data[4])
+            value4.append(data[5])
+            value5.append(data[6])
+    lst_val_1 = change_value_to_float(value1)
+    lst_val_2 = change_value_to_float(value2)
+    lst_val_3 = change_value_to_float(value3)
+    lst_val_4 = change_value_to_string(value4)
+    lst_val_5 = change_value_to_string(value5)
+
+    return lst_val_1[0], lst_val_2[0], lst_val_3[0], lst_val_4[0], lst_val_5[0]
 
 def change_value_to_float(valu):
     list_value = []
@@ -31,11 +36,13 @@ def change_value_to_float(valu):
         loop += 1
     return list_value
 
-print(project_um())
-
-
-##เก็บค่าของแต่ละ value ไว้ในลิสต์ของแต่ละค่า
-#แก้ชื่อตัวแปรน่ะ
-#do = ปริมาณออกซิเจนที่ละลายในน้ำ ค่าเป็นเลขหลักเดียวกับทศนิยม เช่น 5.8, 6.4
-#ec = ค่าความนำไฟฟ้า ค่าส่วนใหญ่เป็นเลขสามหลักกับทศนิยม เช่น 148.3, 154.5
-#temp = อุณภูมิน้ำ ค่าส่วนใหญ่เป็นเลขสองหลักกับทศนิยม เช่น 19.5, 33.0
+def change_value_to_string(valu):
+    list_value = []
+    loop = 0
+    for i in valu:
+        value = i[1:len(valu[loop])-1]
+        list_value.append(value)
+        loop += 1
+    return(list_value)
+    
+# print(project_um())

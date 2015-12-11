@@ -1,4 +1,5 @@
 import csv
+from nvd3 import lineChart
 def project_um():
     with open('Bangsai.csv', encoding="utf-8") as csvfile:
         test = csv.reader(csvfile)
@@ -15,8 +16,9 @@ def project_um():
     list_do = change_value_to_float(list_do)
     list_ec = change_value_to_float(list_ec)
     list_temp = change_value_to_float(list_temp)
-    print(list_do)
-    return list_date, list_do, list_ec, list_temp
+    return len(list_do)
+    #created HTML
+    #chart = lineChart(name="lineChart", x_is_date=True, 
 
 def change_value_to_float(valu):
     list_value = []
@@ -29,7 +31,8 @@ def change_value_to_float(valu):
         loop += 1
     return list_value
 
-data_split()
+print(project_um())
+
 
 ##เก็บค่าของแต่ละ value ไว้ในลิสต์ของแต่ละค่า
 #แก้ชื่อตัวแปรน่ะ

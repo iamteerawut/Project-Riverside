@@ -1,4 +1,5 @@
 import csv
+from pylab import *
 def project_um():
     with open('Pamok.csv') as csvfile:
         test = csv.reader(csvfile)
@@ -16,7 +17,12 @@ def project_um():
             value3.append(data[4])
             value4.append(data[5])
             value5.append(data[6])
-
-    return value1[0], value2[0], value3[0], value4[0], value5[0]
-    
+        hist(value1, range=[0,10], bins=10)
+        xlabel = ('Date')
+        ylabel = ('D.O. value')
+        grid(Ture)
+        xlim(0,10)
+        ylim(0,5)
+        show()
+   
 print(project_um())

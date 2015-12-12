@@ -1,20 +1,20 @@
 import csv
 from nvd3 import lineChart
-def project_um():
-    with open('Bangsai.csv', encoding="utf-8") as csvfile:
+def data_split():
+    with open('Chainat.csv', encoding="utf-8") as csvfile:
         test = csv.reader(csvfile)
         list_date = []
         list_do = []
         for i in test:
             data = i[0].split(';')
-            list_date.append(data[1])
-            list_do.append(data[2])
+            list_date.append(data[2])
+            list_do.append(data[4])
     list_do = change_value_to_float(list_do)
     list_mean_do_in_aday = average_per_day(list_do, list_date)
-
+    
     #created HTML
-    output_file = open('Bangsai.html', 'w')
-    chart = lineChart(name="lineChart Bangsai DO", width=1244)
+    output_file = open('Chainat.html', 'w')
+    chart = lineChart(name="lineChart Chainat DO", width=1244)
     xdata = range(1, 32)
     ydata = list_mean_do_in_aday[:30]
     ydata2 = list_mean_do_in_aday[30:61]
@@ -22,7 +22,6 @@ def project_um():
     ydata4 = list_mean_do_in_aday[91:122]
     ydata5 = list_mean_do_in_aday[122:153]
     ydata6 = list_mean_do_in_aday[153:]
-    
     
     chart.add_serie(y=ydata, x=xdata, name='เม.ย.')
     chart.add_serie(y=ydata2, x=xdata, name='พ.ค.')
@@ -73,4 +72,5 @@ def average_per_day(valu, date):
                 aver = float(valu[i])
                 time = 1
     return list_average
-project_um()
+
+data_split()

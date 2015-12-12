@@ -12,7 +12,7 @@ def data_split():
     list_mean_do_in_aday = average_per_day(list_do, list_date)
 
    #created HTML
-    output_file = open('Pamok-DO.html', 'w')
+    output_file = open('DO-Pamok.html', 'w')
     chart = lineChart(name="lineChart Pamok DO", width=1244)
     xdata = range(1, 32)
     ydata = list_mean_do_in_aday[:30]

@@ -13,7 +13,7 @@ def data_split():
     list_mean_do_in_aday = average_per_day(list_do, list_date)
     
     #created HTML
-    output_file = open('Samlae-DO.html', 'w')
+    output_file = open('DO-Samlae.html', 'w')
     chart = lineChart(name="lineChart Samlae DO", width=1244)
     xdata = range(1, 32)
     xdata2 = range(17, 32)

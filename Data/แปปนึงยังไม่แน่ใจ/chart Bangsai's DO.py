@@ -19,8 +19,8 @@ def project_um():
     list_mean_do_in_aday = average_per_day(list_do, list_date)
 
     #created HTML
-    output_file = open('test-Project.html', 'w')
-    chart = lineChart(name="lineChart Bangsai D.O.", width=1244)
+    output_file = open('Bangsai.html', 'w')
+    chart = lineChart(name="lineChart Bangsai DO", width=1244)
     xdata = range(1, 32)
     ydata = list_mean_do_in_aday[:30]
     ydata2 = list_mean_do_in_aday[30:61]

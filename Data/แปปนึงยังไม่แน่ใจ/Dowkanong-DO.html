@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/nvd3/1.7.0/nv.d3.min.css" rel="stylesheet" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/nvd3/1.7.0/nv.d3.min.js"></script>
+    </head>
+    <body>
+        
+    <div id="linechart_dowkanong_do"><svg style="width:1244px;height:450px;"></svg></div>
+
+
+    <script>
+
+
+
+            data_linechart_dowkanong_do=[{"values": [{"y": "1.12", "x": 14}, {"y": "1.36", "x": 15}, {"y": "1.39", "x": 16}, {"y": "1.10", "x": 17}, {"y": "1.02", "x": 18}, {"y": "0.76", "x": 19}, {"y": "0.30", "x": 20}, {"y": "0.93", "x": 21}, {"y": "0.51", "x": 22}, {"y": "1.19", "x": 23}, {"y": "0.78", "x": 24}, {"y": "1.36", "x": 25}, {"y": "1.74", "x": 26}, {"y": "2.33", "x": 27}, {"y": "2.55", "x": 28}, {"y": "1.55", "x": 29}, {"y": "0.80", "x": 30}, {"y": "0.60", "x": 31}], "key": "\u0e01.\u0e04.", "yAxis": "1"}, {"values": [{"y": "0.47", "x": 1}, {"y": "0.48", "x": 2}, {"y": "0.43", "x": 3}, {"y": "0.34", "x": 4}, {"y": "0.45", "x": 5}, {"y": "0.99", "x": 6}, {"y": "1.75", "x": 7}, {"y": "2.33", "x": 8}, {"y": "2.68", "x": 9}, {"y": "2.96", "x": 10}, {"y": "2.52", "x": 11}, {"y": "2.12", "x": 12}, {"y": "2.23", "x": 13}, {"y": "2.14", "x": 14}, {"y": "1.99", "x": 15}, {"y": "2.19", "x": 16}, {"y": "2.61", "x": 17}, {"y": "2.50", "x": 18}, {"y": "2.66", "x": 19}, {"y": "2.88", "x": 20}, {"y": "2.86", "x": 21}, {"y": "2.91", "x": 22}, {"y": "3.09", "x": 23}, {"y": "3.01", "x": 24}, {"y": "3.00", "x": 25}], "key": "\u0e2a.\u0e04.", "yAxis": "1"}, {"values": [{"y": "2.88", "x": 1}, {"y": "2.33", "x": 2}, {"y": "2.28", "x": 3}, {"y": "2.44", "x": 4}, {"y": "2.50", "x": 5}, {"y": "2.60", "x": 6}, {"y": "2.54", "x": 7}, {"y": "2.41", "x": 8}, {"y": "2.38", "x": 9}, {"y": "2.56", "x": 10}, {"y": "2.68", "x": 11}, {"y": "2.47", "x": 12}, {"y": "2.36", "x": 13}, {"y": "2.57", "x": 14}, {"y": "2.75", "x": 15}, {"y": "2.80", "x": 16}, {"y": "2.67", "x": 17}, {"y": "2.25", "x": 18}, {"y": "2.33", "x": 19}, {"y": "2.53", "x": 20}, {"y": "2.21", "x": 21}, {"y": "2.32", "x": 22}, {"y": "2.58", "x": 23}, {"y": "2.63", "x": 24}, {"y": "2.67", "x": 25}, {"y": "2.57", "x": 26}, {"y": "2.19", "x": 27}, {"y": "2.35", "x": 28}, {"y": "1.42", "x": 29}], "key": "\u0e01.\u0e22.", "yAxis": "1"}];
+
+
+        nv.addGraph(function() {
+        var chart = nv.models.lineChart();
+
+        chart.margin({top: 30, right: 60, bottom: 20, left: 60});
+
+        var datum = data_linechart_dowkanong_do;
+
+
+
+                chart.xAxis
+                .tickFormat(d3.format(',r'));
+            chart.yAxis
+                .tickFormat(d3.format(',.02f'));
+
+
+
+          chart.showLegend(true);
+
+
+    
+
+        
+
+
+
+            d3.select('#linechart_dowkanong_do svg')
+            .datum(datum)
+            .transition().duration(500)
+            .attr('width', 1244)
+            .attr('height', 450)
+            .call(chart);
+
+
+        });
+
+
+
+    </script>
+
+    </body>
+</html>

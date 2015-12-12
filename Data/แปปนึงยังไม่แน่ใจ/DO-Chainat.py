@@ -1,7 +1,7 @@
 import csv
 from nvd3 import lineChart
 def data_split():
-    with open('Nakhonsawan.csv', encoding="utf-8") as csvfile:
+    with open('Chainat.csv', encoding="utf-8") as csvfile:
         test = csv.reader(csvfile)
         list_date = []
         list_do = []
@@ -13,19 +13,17 @@ def data_split():
     list_mean_do_in_aday = average_per_day(list_do, list_date)
     
     #created HTML
-    output_file = open('Nakhonsawan.html', 'w')
-    chart = lineChart(name="lineChart Nakhonsawan DO", width=1244)
+    output_file = open('Chainat-DO.html', 'w')
+    chart = lineChart(name="lineChart Chainat DO", width=1244)
     xdata = range(1, 32)
-    xdata2 = range(23, 32)
-    ydata = list_mean_do_in_aday[:8]
-    ydata2 = list_mean_do_in_aday[8:38]
-    ydata3 = list_mean_do_in_aday[38:68]
-    ydata4 = list_mean_do_in_aday[68:99]
-    ydata5 = list_mean_do_in_aday[99:129]
-    ydata6 = list_mean_do_in_aday[129:]
+    ydata = list_mean_do_in_aday[:30]
+    ydata2 = list_mean_do_in_aday[30:61]
+    ydata3 = list_mean_do_in_aday[61:91]
+    ydata4 = list_mean_do_in_aday[91:122]
+    ydata5 = list_mean_do_in_aday[122:153]
+    ydata6 = list_mean_do_in_aday[153:]
     
-
-    chart.add_serie(y=ydata, x=xdata2, name='เม.ย.')
+    chart.add_serie(y=ydata, x=xdata, name='เม.ย.')
     chart.add_serie(y=ydata2, x=xdata, name='พ.ค.')
     chart.add_serie(y=ydata3, x=xdata, name='มิ.ย.')
     chart.add_serie(y=ydata4, x=xdata, name='ก.ค.')
@@ -55,7 +53,7 @@ def average_per_day(valu, date):
         day = i.split()
         list_date.append(int(day[0][1:]))
     # fix constant
-    cons = list_date[0]
+    cons = 1
     aver = 0
     time = 0
     for i in range(len(list_date)):

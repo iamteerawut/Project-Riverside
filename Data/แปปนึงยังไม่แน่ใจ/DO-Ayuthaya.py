@@ -1,10 +1,12 @@
 import csv
 from nvd3 import lineChart
 def project_um():
-    with open('Bangsai.csv', encoding="utf-8") as csvfile:
+    with open('Ayuthaya.csv', encoding="utf-8") as csvfile:
         test = csv.reader(csvfile)
         list_date = []
         list_do = []
+        list_ec = []
+        list_temp = []
         for i in test:
             data = i[0].split(';')
             list_date.append(data[1])
@@ -13,23 +15,16 @@ def project_um():
     list_mean_do_in_aday = average_per_day(list_do, list_date)
 
     #created HTML
-    output_file = open('Bangsai.html', 'w')
-    chart = lineChart(name="lineChart Bangsai DO", width=1244)
+    output_file = open('Ayuthaya-DO.html', 'w')
+    chart = lineChart(name="lineChart Ayuthaya D.O.", width=1244)
     xdata = range(1, 32)
-    ydata = list_mean_do_in_aday[:30]
-    ydata2 = list_mean_do_in_aday[30:61]
-    ydata3 = list_mean_do_in_aday[61:91]
-    ydata4 = list_mean_do_in_aday[91:122]
-    ydata5 = list_mean_do_in_aday[122:153]
-    ydata6 = list_mean_do_in_aday[153:]
+    ydata = list_mean_do_in_aday[:31]
+    ydata2 = list_mean_do_in_aday[31:62]
+    ydata3 = list_mean_do_in_aday[62:]
     
-    
-    chart.add_serie(y=ydata, x=xdata, name='เม.ย.')
-    chart.add_serie(y=ydata2, x=xdata, name='พ.ค.')
-    chart.add_serie(y=ydata3, x=xdata, name='มิ.ย.')
-    chart.add_serie(y=ydata4, x=xdata, name='ก.ค.')
-    chart.add_serie(y=ydata5, x=xdata, name='ส.ค.')
-    chart.add_serie(y=ydata6, x=xdata, name='ก.ย.')
+    chart.add_serie(y=ydata, x=xdata, name='ก.ค.')
+    chart.add_serie(y=ydata2, x=xdata, name='ส.ค.')
+    chart.add_serie(y=ydata3, x=xdata, name='ก.ย.')
     chart.buildhtml()
     output_file.write(chart.htmlcontent)
     # close Html file

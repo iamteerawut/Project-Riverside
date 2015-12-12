@@ -21,7 +21,7 @@ all_ave_temp = [ave_temp_ayuthaya, ave_temp_bangsai, ave_temp_chainat, ave_temp_
 
 #created HTML
 def ave_do_chart():
-    output_file = open('DO-Average.html', 'w')
+    output_file = open('Average-DO.html', 'w')
     chart = lineChart(name="lineChart of average D.O.", width=1244)
     xdata = range(9)
     ydata = all_ave_do
@@ -38,7 +38,7 @@ ave_do_chart()
 
 #created HTML for average E.C.
 def ave_ec_chart():
-    output_file = open('EC-Average.html', 'w')
+    output_file = open('Average-EC.html', 'w')
     chart = lineChart(name="lineChart of average E.C.", width=1244)
     xdata = range(9)
     ydata = all_ave_ec
@@ -54,7 +54,7 @@ ave_ec_chart()
 
 #created HTML for average temperature
 def ave_temp_chart():
-    output_file = open('Temp-Average.html', 'w')
+    output_file = open('Average-Temp.html', 'w')
     chart = lineChart(name="lineChart of average Temperature", width=1244)
     xdata = range(9)
     ydata = all_ave_temp

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/nvd3/1.7.0/nv.d3.min.css" rel="stylesheet" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/nvd3/1.7.0/nv.d3.min.js"></script>
+    </head>
+    <body>
+        
+    <div id="linechart_of_average_d_o"><svg style="width:1244px;height:450px;"></svg></div>
+
+
+    <script>
+
+
+
+            data_linechart_of_average_d_o=[{"values": [{"x": "Ayuthaya", "y": "5.30"}, {"x": "Bangsai", "y": "3.46"}, {"x": "Chainat", "y": "5.29"}, {"x": "Dowkanong", "y": "2.01"}, {"x": "Nakhonsawan", "y": "4.66"}, {"x": "Pamok", "y": "5.51"}, {"x": "Samlea", "y": "3.77"}], "key": "D.O.", "yAxis": "1"}];
+
+
+        nv.addGraph(function() {
+        var chart = nv.models.lineChart();
+
+        chart.margin({top: 30, right: 60, bottom: 20, left: 60});
+
+        var datum = data_linechart_of_average_d_o;
+
+
+
+                chart.yAxis
+                .tickFormat(d3.format(',.02f'));
+            chart.xAxis
+                .tickFormat(d3.format(',r'));
+
+
+
+          chart.showLegend(true);
+
+
+    
+
+        
+
+
+
+            d3.select('#linechart_of_average_d_o svg')
+            .datum(datum)
+            .transition().duration(500)
+            .attr('width', 1244)
+            .attr('height', 450)
+            .call(chart);
+
+
+        });
+
+
+
+    </script>
+
+    </body>
+</html>

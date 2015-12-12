@@ -8,49 +8,43 @@
     </head>
     <body>
         
-    <div id="linechart_of_average_d_o"><svg style="width:1244px;height:450px;"></svg></div>
+    <div id="discretebarchart_of_average_d_o"><svg style="width:700px;height:700px;"></svg></div>
 
 
     <script>
 
 
 
-            data_linechart_of_average_d_o=[{"key": "D.O.", "values": [{"y": "5.30", "x": 0}, {"y": "3.46", "x": 1}, {"y": "5.29", "x": 2}, {"y": "2.01", "x": 3}, {"y": "4.66", "x": 4}, {"y": "5.51", "x": 5}, {"y": "3.77", "x": 6}], "yAxis": "1"}];
+                data_discretebarchart_of_average_d_o=[{"yAxis": "1", "values": [{"y": "5.30", "x": "Ayuthaya"}, {"y": "3.46", "x": "Bangsai"}, {"y": "5.29", "x": "Chainat"}, {"y": "2.01", "x": "Dowkanong"}, {"y": "4.66", "x": "Nakhonsawan"}, {"y": "5.51", "x": "Pamok"}, {"y": "3.77", "x": "Samlea"}], "key": "D.O."}];
 
 
-        nv.addGraph(function() {
-        var chart = nv.models.lineChart();
+            nv.addGraph(function() {
+        var chart = nv.models.discreteBarChart();
 
         chart.margin({top: 30, right: 60, bottom: 20, left: 60});
 
-        var datum = data_linechart_of_average_d_o;
+        var datum = data_discretebarchart_of_average_d_o;
 
 
 
-                chart.yAxis
-                .tickFormat(d3.format(',.02f'));
-            chart.xAxis
-                .tickFormat(d3.format(',r'));
+                    chart.yAxis
+                .tickFormat(d3.format(',.0f'));
 
-
-
-          chart.showLegend(true);
-
-
+    
     
 
         
 
 
 
-            d3.select('#linechart_of_average_d_o svg')
+            d3.select('#discretebarchart_of_average_d_o svg')
             .datum(datum)
             .transition().duration(500)
-            .attr('width', 1244)
-            .attr('height', 450)
+            .attr('width', 700)
+            .attr('height', 700)
             .call(chart);
 
-
+    
         });
 
 

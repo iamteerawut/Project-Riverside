@@ -42,6 +42,33 @@ def average_per_day(valu, date):
                 time = 1
     return list_average
 
+def average_per_day_pm(valu, date):  
+    list_average = []
+    list_date = []
+    for i in date:
+        day = i.split()
+        list_date.append(int(day[0]))
+    # fix constant
+    cons = list_date[0]
+    aver = 0
+    time = 0
+    for i in range(len(valu)):
+        if list_date[i] == cons:
+            if valu[i] == 'F':
+                pass
+            else:
+                aver += float(valu[i])
+                time += 1
+        elif list_date[i] != cons:
+            list_average.append('%.2f'%(aver/time))
+            cons = list_date[i]
+            if valu[i] == 'F':
+                pass
+            else:
+                aver = float(valu[i])
+                time = 1
+    return list_average
+
 ### Chart temp Ayuthaya
 list_mean_temp_in_aday = average_per_day(list_temp_ay, list_date_ay)
 output_file = open("Temp-Ayuthaya.html", "w")
@@ -123,7 +150,7 @@ output_file.write(chart.htmlcontent)
 output_file.close()
 
 ### Chart temp Nakhonsawan
-list_mean_do_in_aday = average_per_day(list_temp_ch, list_date_ch)
+list_mean_do_in_aday = average_per_day(list_temp_nk, list_date_nk)
 output_file = open("Temp-Nakhonsawan.html", "w")
 chart = lineChart(name="lineChart Nakhonsawan Temp", width=1244)
 temp = range(1, 32)
@@ -147,7 +174,7 @@ output_file.write(chart.htmlcontent)
 output_file.close()
 
 ### Chart temp Pamok
-list_mean_do_in_aday = average_per_day(list_temp_ch, list_date_ch)
+list_mean_do_in_aday = average_per_day_pm(list_temp_pm, list_date_pm)
 output_file = open("Temp-Pamok.html", "w")
 chart = lineChart(name="lineChart Pamok Temp", width=1244)
 temp = range(1, 32)
@@ -170,7 +197,7 @@ output_file.write(chart.htmlcontent)
 output_file.close()
 
 ### Chart temp Samlae
-list_mean_do_in_aday = average_per_day(list_temp_ch, list_date_ch)
+list_mean_do_in_aday = average_per_day(list_temp_sl, list_date_sl)
 output_file = open("Temp-Samlae.html", "w")
 chart = lineChart(name="lineChart Samlae Temp", width=1244)
 temp = range(1, 32)

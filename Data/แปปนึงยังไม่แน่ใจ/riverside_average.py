@@ -22,7 +22,7 @@ all_ave_temp = [ave_temp_ayuthaya, ave_temp_bangsai, ave_temp_chainat, ave_temp_
 #created HTML
 def ave_do_chart():
     output_file = open('ave_do_chart.html', 'w')
-    chart = discreteBarChart(name='discreteBarChart of average D.O.', height=700, width=700)
+    chart = discreteBarChart(name='discreteBarChart of average D.O.', width=1244)
 
     xdata = ["Ayuthaya", "Bangsai", "Chainat", "Dowkanong", "Nakhonsawan", "Pamok", "Samlea"]
     ydata = all_ave_do

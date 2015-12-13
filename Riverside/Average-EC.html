@@ -15,11 +15,11 @@
 
 
 
-            data_linechart_of_average_e_c=[{"key": "E.C.", "values": [{"y": "301.95", "x": 0}, {"y": "429.86", "x": 1}, {"y": "239.75", "x": 2}, {"y": "6446.03", "x": 3}, {"y": "187.96", "x": 4}, {"y": "403.52", "x": 5}, {"y": "324.28", "x": 6}], "yAxis": "1"}];
+                data_linechart_of_average_e_c=[{"values": [{"y": "301.95", "x": "Ayuthaya"}, {"y": "429.86", "x": "Bangsai"}, {"y": "239.75", "x": "Chainat"}, {"y": "6446.03", "x": "Dowkanong"}, {"y": "187.96", "x": "Nakhonsawan"}, {"y": "403.52", "x": "Pamok"}, {"y": "324.28", "x": "Samlea"}], "key": "E.C.", "yAxis": "1"}];
 
 
-        nv.addGraph(function() {
-        var chart = nv.models.lineChart();
+            nv.addGraph(function() {
+        var chart = nv.models.discreteBarChart();
 
         chart.margin({top: 30, right: 60, bottom: 20, left: 60});
 
@@ -27,16 +27,10 @@
 
 
 
-                chart.yAxis
-                .tickFormat(d3.format(',.02f'));
-            chart.xAxis
-                .tickFormat(d3.format(',r'));
+                    chart.yAxis
+                .tickFormat(d3.format(',.0f'));
 
-
-
-          chart.showLegend(true);
-
-
+    
     
 
         
@@ -50,7 +44,7 @@
             .attr('height', 450)
             .call(chart);
 
-
+    
         });
 
 

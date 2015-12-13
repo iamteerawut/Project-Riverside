@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/nvd3/1.7.0/nv.d3.min.css" rel="stylesheet" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/nvd3/1.7.0/nv.d3.min.js"></script>
+    </head>
+    <body>
+        
+    <div id="linechart_dowkanong_e_c"><svg style="width:1244px;height:450px;"></svg></div>
+
+
+    <script>
+
+
+
+            data_linechart_dowkanong_e_c=[{"yAxis": "1", "key": "\u0e01.\u0e04.", "values": [{"x": 1, "y": "17678.71"}, {"x": 2, "y": "17031.96"}, {"x": 3, "y": "15330.00"}, {"x": 4, "y": "12915.00"}, {"x": 5, "y": "10154.29"}, {"x": 6, "y": "8752.25"}, {"x": 7, "y": "7622.46"}, {"x": 8, "y": "6669.75"}, {"x": 9, "y": "5499.04"}, {"x": 10, "y": "5260.58"}, {"x": 11, "y": "5058.25"}, {"x": 12, "y": "5047.62"}, {"x": 13, "y": "4984.25"}, {"x": 14, "y": "4966.12"}, {"x": 15, "y": "4881.21"}, {"x": 16, "y": "4477.62"}, {"x": 17, "y": "4238.88"}]}, {"yAxis": "1", "key": "\u0e2a.\u0e04.", "values": [{"x": 1, "y": "3898.46"}, {"x": 2, "y": "3776.29"}, {"x": 3, "y": "3298.58"}, {"x": 4, "y": "2996.21"}, {"x": 5, "y": "2796.46"}, {"x": 6, "y": "2511.21"}, {"x": 7, "y": "2238.67"}, {"x": 8, "y": "2224.92"}, {"x": 9, "y": "2236.79"}, {"x": 10, "y": "2253.46"}, {"x": 11, "y": "2274.58"}, {"x": 12, "y": "2291.00"}, {"x": 13, "y": "2448.29"}, {"x": 14, "y": "2030.04"}, {"x": 15, "y": "1649.71"}, {"x": 16, "y": "1534.08"}, {"x": 17, "y": "1529.92"}, {"x": 18, "y": "1535.33"}, {"x": 19, "y": "1545.96"}, {"x": 20, "y": "1561.17"}, {"x": 21, "y": "1575.75"}, {"x": 22, "y": "1583.88"}, {"x": 23, "y": "1582.42"}, {"x": 24, "y": "1554.75"}, {"x": 25, "y": "1518.42"}]}, {"yAxis": "1", "key": "\u0e01.\u0e22.", "values": [{"x": 1, "y": "1513.21"}, {"x": 2, "y": "1512.79"}, {"x": 3, "y": "1506.17"}, {"x": 4, "y": "1361.54"}, {"x": 5, "y": "1007.42"}, {"x": 6, "y": "880.96"}, {"x": 7, "y": "867.42"}, {"x": 8, "y": "862.62"}, {"x": 9, "y": "864.29"}, {"x": 10, "y": "858.88"}, {"x": 11, "y": "848.58"}, {"x": 12, "y": "838.96"}, {"x": 13, "y": "810.33"}, {"x": 14, "y": "729.21"}, {"x": 15, "y": "612.62"}, {"x": 16, "y": "521.33"}]}];
+
+
+        nv.addGraph(function() {
+        var chart = nv.models.lineChart();
+
+        chart.margin({top: 30, right: 60, bottom: 20, left: 60});
+
+        var datum = data_linechart_dowkanong_e_c;
+
+
+
+                chart.yAxis
+                .tickFormat(d3.format(',.02f'));
+            chart.xAxis
+                .tickFormat(d3.format(',r'));
+
+
+
+          chart.showLegend(true);
+
+
+    
+
+        
+
+
+
+            d3.select('#linechart_dowkanong_e_c svg')
+            .datum(datum)
+            .transition().duration(500)
+            .attr('width', 1244)
+            .attr('height', 450)
+            .call(chart);
+
+
+        });
+
+
+
+    </script>
+
+    </body>
+</html>

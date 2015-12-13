@@ -48,7 +48,6 @@ def change_value_to_float(valu):
     return list_value
 
 def average_per_day(valu, date):
-    
     list_average = []
     list_date = []
     for i in date:

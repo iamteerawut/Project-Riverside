@@ -443,7 +443,7 @@ footer .footer-below {
     transform: rotate(45deg);
 }
 
-.portfolio-modal .close-modal .lr .rl {
+.chart-modal .close-modal .lr .rl {
     z-index: 1052;
     width: 1px;
     height: 75px;

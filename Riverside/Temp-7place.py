@@ -171,7 +171,7 @@ output_file.close()
 
 ### Chart temp Samlae
 list_mean_do_in_aday = average_per_day(list_temp_ch, list_date_ch)
-output_file = open("Temp Samlae.html", "w")
+output_file = open("Temp-Samlae.html", "w")
 chart = lineChart(name="lineChart Samlae Temp", width=1244)
 temp = range(1, 32)
 temp2 = range(1, 14)
